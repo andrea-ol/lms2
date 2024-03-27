@@ -42,9 +42,6 @@ require_once 'db_config.php';
                 <?php
                 $rol_user = $user->shortname;
                 if ($rol_user == 'editingteacher' && $id_user != 2) { ?>
-
-
-                    <form method="POST" name="edit_id" id="edit_id" action="actualizar_list.php">
                         <table id="example" class="display" style="width:100%">
                             <thead>
                                 <tr id="vistaap-thead">
@@ -55,13 +52,8 @@ require_once 'db_config.php';
                                 </tr>
                             </thead>
 
-
                             <tbody>
                                 <?php
-
-
-                                // $dato = 2;  id curso, simulacion de ejemplo toma el curso #6 
-
 
                                 // Consulta para unificacion de tablas y muestra de usuarios
                                 $sentencia = $conn->query("SELECT distinct u.id, u.firstname, u.lastname, u.email,e.courseid, mc.fullname, r.shortname, bc.reaprendizaje, bc.descripcionra, bc.rea_nombre
@@ -75,7 +67,6 @@ require_once 'db_config.php';
                                 WHERE mc.id = ".$curso." AND r.shortname = 'student'");
                                 $courses = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
-
                                 // Recorrido de los datos obtenidos
                                 foreach ($courses as $course) {
                                     $firstname = $course->firstname;
@@ -84,7 +75,6 @@ require_once 'db_config.php';
                                     $observacion = $course->descripcionra;
                                     $rea_nombre = $course->rea_nombre;
 
-
                                 ?>
                                     <!-- SEMAFORIZACION PARA VISTA RESULTADO APRENDIZAJE -->
                         <tr> <?php if ($reaprendizaje == 'A') { $colorStyle = 'background-color:#BCE2A8;'; } elseif ($reaprendizaje == 'D') { $colorStyle = 'background-color: #DF5C73;'; } else { $colorStyle = 'background-color:#FCE059;'; }
@@ -92,8 +82,7 @@ require_once 'db_config.php';
 
                                 <?php } ?>
                             </tbody>
-
-
+                            
                             <tfoot>
                                 <tr>
                                     <th>Aprendiz</th>
@@ -101,14 +90,6 @@ require_once 'db_config.php';
                                 </tr>
                             </tfoot>
                         </table>
-                        <div style="text-align:left;">
-                            <!-- BOTON PARA MANEJO DE DATA A POSTGRES -->
-                            <button type="submit" style="display:flexbox;" class="btn btn-success">Guardar Cambios</button>
-                        </div>
-                    </form>
-
-
-
 
                 <?php
                 } else { ?>
@@ -127,7 +108,6 @@ require_once 'db_config.php';
                                     <th>Observación</th>
                                 </tr>
                             </thead>
-
 
                             <tbody>
                                 <?php
