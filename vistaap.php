@@ -78,7 +78,6 @@ require_once 'db_config.php';
 
                                 // Recorrido de los datos obtenidos
                                 foreach ($courses as $course) {
-                                    $id_user = $course->id;
                                     $firstname = $course->firstname;
                                     $lastname = $course->lastname;
                                     $reaprendizaje = $course->reaprendizaje;
@@ -148,7 +147,6 @@ require_once 'db_config.php';
 
                                 // Recorrido de los datos obtenidos
                                 foreach ($courses as $course) {
-                                    $id_user = $course->userid;
                                     $firstname = $course->firstname;
                                     $lastname = $course->lastname;
                                     $reaprendizaje = $course->reaprendizaje;
