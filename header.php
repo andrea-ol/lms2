@@ -69,9 +69,41 @@
                     </li>
 
 
-                    <li><a class="dropdown-item" href="http://localhost/zajuna/login/logout.php?sesskey">Cerrar sesión</a></li>
+                    <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
                 </ul>
             </li>
         </ul>
     </nav>
     <div id="layoutSidenav_content">
+<!-- 
+    <script>
+        // Función para obtener la clave de sesión de Moodle
+        function obtenerSesskey() {
+            // Realiza una solicitud AJAX a la página de inicio de sesión de Moodle para obtener la clave de sesión
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://zajuna/login/index.php', true); // Reemplaza 'tu_sitio_moodle' con la URL de tu Moodle
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // Extrae la clave de sesión del contenido de la página
+                    var content = xhr.responseText;
+                    var match = content.match(/name="sesskey" value="([^"]+)"/);
+                    if (match && match[1]) {
+                        var sesskey = match[1];
+                        // Redirige al usuario a la URL de cierre de sesión con la clave de sesión
+                        window.location.href = 'http://zajuna/login/logout.php?sesskey=' + sesskey;
+                    } else {
+                        console.error('No se pudo encontrar la clave de sesión.');
+                    }
+                } else {
+                    console.error('Error al cargar la página de inicio de sesión.');
+                }
+            };
+            xhr.onerror = function() {
+                console.error('Error de red al cargar la página de inicio de sesión.');
+            };
+            xhr.send();
+        }
+
+        // Llama a la función para obtener la clave de sesión al cargar la página
+        obtenerSesskey();
+    </script> -->
