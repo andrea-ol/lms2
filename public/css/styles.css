@@ -398,7 +398,7 @@ optgroup,
 textarea {
   margin: 0;
   font-family: inherit;
-  font-size: inherit;
+  font-size: smaller;
   line-height: inherit;
 }
 
@@ -11834,8 +11834,8 @@ th + th {
   background-color: #ffffff;
 }
 tr:nth-child(even) td {
-  border-left: 1px solid #000000;
-  border-right: 1px solid #000000;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
 }
 tr:nth-child(odd) td {
   border-left: 1px solid #ffffff;
