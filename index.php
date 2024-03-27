@@ -150,7 +150,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
 <?php include 'footer.php';
 } else {
     // Si no hay una sesión iniciada o datos del usuario, redirigir al usuario a otra página
-    header("Location: login.php");
+    header("Location: http://localhost/zajuna/");
     exit();
 }
 ?>

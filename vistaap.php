@@ -156,9 +156,5 @@ require_once 'db_config.php';
         </div>
     </div>
 </main>
-
-
-
-
 <!-- llamada Footer -->
 <?php include 'footer.php'; ?>
