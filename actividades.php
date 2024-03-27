@@ -42,11 +42,12 @@ require_once 'db_config.php'; // llamar conexion base de datos
         </button>
     </div>
         <div class="card m-4">
+            
                 <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">ACTIVIDADES/QUIZ/EVALUACIONES</li>
         </ol>
                
-            <div class="card-body" id="actividades-card">
+            <div class="card-body">
                 <!-- METODO POST A TRAVES DE FORM PARA UPDATE DE LA DATA -->
                 <form method="POST" name="edit_id" id="edit_id" action="actualizar_acti.php">
                     <div class="table-responsive">
@@ -107,14 +108,17 @@ require_once 'db_config.php'; // llamar conexion base de datos
                                                                 ?>
                                                                 <div class="d-gitd gap-2 col-8 mx-auto">
                                                                     <input disabled type="text" name="edit_calificacion[]" id="edit_calificacion" class="text-center" style="background-color:#BCE2A8" value="A"></input>
-                                                                    
                                                                 </div>
                                                                 <?php
                                                             } else {
                                                                 ?>
                                                                 <div class="d-gitd gap-2 col-8 mx-auto">
-                                                                    <input disabled type="text" name="edit_calificacion2[]" id="edit_calificacion2" class="text-center" style="background-color:#DF5C73" value="D"></input>
+                                                                    <input type="text" name="edit_calificacion2[]" id="edit_calificacion2" class="text-center" style="background-color:#DF5C73" value="<?php echo $grad; ?>"></input>
                                                                     
+                                                                    <input type="hidden" name="curso_id[]" value="<?= $curso; ?>">
+                                                                    <input type="hidden" name="user_id[]" value="<?= $user->id; ?>">
+                                                                    <input type="hidden" name="actividad[]" value="<?= $actividad->id; ?>">
+                
                                                                 </div>
                                                                 <?php
                                                             }
@@ -122,7 +126,11 @@ require_once 'db_config.php'; // llamar conexion base de datos
                                                     } else {
                                                         ?>
                                                         <div class="d-gitd gap-2 col-8 mx-auto">
-                                                            <input disabled type="text" name="edit_calificacion3[]" id="edit_calificacion3" class="text-center" style="background-color:#FCE059" value="-"></input>
+                                                            <input type="text" name="edit_calificacion3[]" id="edit_calificacion3" class="text-center" style="background-color:#FCE059" value="-"></input>
+
+
+
+
                                                         </div>
                                                     <?php
                                                     }
@@ -134,9 +142,9 @@ require_once 'db_config.php'; // llamar conexion base de datos
                                     } ?>
                             </tbody>
                         </table>
-                         <!--       <div style="text-align:left;">
-                            <button type="submit" style="display:flexbox;" class="btn btn-success">Actualizar</button>
-                        </div> -->
+                                <div style="text-align:left;">
+                                    <button type="submit" style="display:flexbox;" class="btn btn-success">Actualizar</button>
+                                </div>
                     </div>
                 </form>
 
