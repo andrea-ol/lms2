@@ -87,6 +87,7 @@ require_once 'db_config.php';
                                 <tr>
                                     <th>Aprendiz</th>
                                     <th>Resultado aprendizaje</th>
+                                    <th>Resultado aprendizaje</th>
                                 </tr>
                             </tfoot>
                         </table>
