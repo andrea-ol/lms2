@@ -24,11 +24,11 @@ require_once 'db_config.php'; // llamar conexion base de datos
             <p>Regresar</p>
         </div>
         <div class="container-icono-con-texto d-flex">
-            <button class="icono-con-texto" onclick="miFuncion()">
+        <button class="icono-con-texto" onclick="miFuncion()">
                 <img src="public/assets/img/blogs.svg" alt="Ícono de blogs" id="icono-blogs">
                 <p>Blogs</p>
             </button>
-            <button class="icono-con-texto" onclick="miFuncion()">
+            <button class="icono-con-texto" onclick="redirectToForos('<?= $id_curso; ?>')">
                 <img src="public/assets/img/foros.svg" alt="Ícono de foros" id="icono-foros">
                 <p>Foros</p>
             </button>
@@ -40,6 +40,9 @@ require_once 'db_config.php'; // llamar conexion base de datos
                 <img src="public/assets/img/wikis.svg" alt="Ícono de wikis" id="icono-wikis">
                 <p>Wikis</p>
             </button>
+
+            <script>function redirectToForos(id_curso) {window.location.href = `foros.php?id_curso=${id_curso}`;}</script>
+
         </div>
         <div class="card m-4">
 
