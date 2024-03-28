@@ -19,10 +19,11 @@ require_once 'db_config.php'; // llamar conexion base de datos
     <div class="container-fluid px-4">
 
         <div class="container-fluid inline-flex">
-            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
-            <a href="index.php"></a>
+            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" onclick="redirectToResultadoAp('<?= $id_curso; ?>')" >
             <p>Regresar</p>
+            <script>function redirectToResultadoAp(id_curso) {window.location.href = `resultadoap.php?id_curso=${id_curso}`;}</script>
         </div>
+
         <div class="container-icono-con-texto d-flex">
         <button class="icono-con-texto" onclick="miFuncion()">
                 <img src="public/assets/img/blogs.svg" alt="Ícono de blogs" id="icono-blogs">
