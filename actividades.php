@@ -243,3 +243,4 @@ require_once 'db_config.php'; // llamar conexion base de datos
 </main>
 <!-- llamada Footer -->
 <?php include 'footer.php'; ?>
+<!-- un espacio -->
