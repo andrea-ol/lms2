@@ -18,24 +18,25 @@ require_once 'db_config.php'; // llamar conexion base de datos
     <h1 class="mt-4">Centro de calificaciones Competencias</h1>
     <div class="container-fluid px-4">
 
+        <!-- boton regresar  -->
         <div class="container-fluid inline-flex">
-            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
-            <a href="index.php"></a>
+            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" onclick="redirectToResultadosAp('<?= $id_curso; ?>')">
             <p>Regresar</p>
+            <script>function redirectToResultadosAp(id_curso) {window.location.href = `resultadoap.php?id_curso=${id_curso}`;}</script>
         </div>
         
         <div class="container-icono-con-texto d-flex">
-                <button type="submit" class="icono-con-texto" name ="id_curso" onclick="redirectToActivity('<?= $id_curso; ?>')">
-                    <img src="public/assets/img/evaluaciones.svg" alt="Ícono de evaluación" id="icono-evaluacion">
-                    <p>Actividades</p>
-                </button>
+            <button type="submit" class="icono-con-texto" name ="id_curso" onclick="redirectToActivity('<?= $id_curso; ?>')">
+                <img src="public/assets/img/evaluaciones.svg" alt="Ícono de evaluación" id="icono-evaluacion">
+                <p>Actividades</p>
+            </button>
+            <button class="icono-con-texto" onclick="redirectToEvidencias('<?= $id_curso; ?>')">
+                <img src="public/assets/img/evidencias.svg" alt="Ícono de evidencias" id="icono-evidencias">
+                <p>Evidencias</p>
+            </button>
             <button class="icono-con-texto" onclick="miFuncion()">
                 <img src="public/assets/img/foros.svg" alt="Ícono de foros" id="icono-foros">
                 <p>Blogs</p>
-            </button>
-            <button class="icono-con-texto" onclick="miFuncion()">
-                <img src="public/assets/img/evidencias.svg" alt="Ícono de evidencias" id="icono-evidencias">
-                <p>Evidencias</p>
             </button>
             <button class="icono-con-texto" onclick="miFuncion()">
                 <img src="public/assets/img/wikis.svg" alt="Ícono de wikis" id="icono-wikis">
@@ -43,6 +44,8 @@ require_once 'db_config.php'; // llamar conexion base de datos
             </button>
 
             <script>function redirectToActivity(id_curso) {window.location.href = `actividades.php?id_curso=${id_curso}`;}</script>
+            <script>function redirectToEvidencias(id_curso) {window.location.href = `evidencias.php?id_curso=${id_curso}`;}</script>
+
 
         </div>
         <div class="card m-4">

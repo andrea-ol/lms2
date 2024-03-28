@@ -17,34 +17,37 @@ require_once 'db_config.php'; // llamar conexion base de datos
 <main>
     <h1 class="mt-4">Centro de calificaciones Competencias</h1>
     <div class="container-fluid px-4">
+
         <!-- boton regresar  -->
         <div class="container-fluid inline-flex">
-            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
-            <a href="resultadosap.php" onclick="redirectToResultadosAp('<?= $id_curso; ?>')"></a>
+            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" onclick="redirectToResultadosAp('<?= $id_curso; ?>')">
             <p>Regresar</p>
-            <script>function redirectToResultadosAp(id_curso) {window.location.href = `resultadosap.php?id_curso=${id_curso}`;}</script>
+            <script>function redirectToResultadosAp(id_curso) {window.location.href = `resultadoap.php?id_curso=${id_curso}`;}</script>
         </div>
 
 
         <div class="container-icono-con-texto d-flex">
-        <button class="icono-con-texto" onclick="miFuncion()">
-                <img src="public/assets/img/blogs.svg" alt="Ícono de blogs" id="icono-blogs">
-                <p>Blogs</p>
-            </button>
+            
             <button class="icono-con-texto" onclick="redirectToForos('<?= $id_curso; ?>')">
                 <img src="public/assets/img/foros.svg" alt="Ícono de foros" id="icono-foros">
                 <p>Foros</p>
             </button>
-            <button class="icono-con-texto" onclick="miFuncion()">
+            <button class="icono-con-texto" onclick="redirectToEvidencias('<?= $id_curso; ?>')">
                 <img src="public/assets/img/evidencias.svg" alt="Ícono de evidencias" id="icono-evidencias">
                 <p>Evidencias</p>
+            </button>
+            <button class="icono-con-texto" onclick="miFuncion()">
+                <img src="public/assets/img/blogs.svg" alt="Ícono de blogs" id="icono-blogs">
+                <p>Blogs</p>
             </button>
             <button class="icono-con-texto" onclick="miFuncion()">
                 <img src="public/assets/img/wikis.svg" alt="Ícono de wikis" id="icono-wikis">
                 <p>Wikis</p>
             </button>
 
+    
             <script>function redirectToForos(id_curso) {window.location.href = `foros.php?id_curso=${id_curso}`;}</script>
+            <script>function redirectToEvidencias(id_curso) {window.location.href = `evidencias.php?id_curso=${id_curso}`;}</script>
 
         </div>
         <div class="card m-4">
@@ -119,7 +122,7 @@ require_once 'db_config.php'; // llamar conexion base de datos
                                                             } else {
                                                             ?>
                                                                 <div class="d-gitd gap-2 col-8 mx-auto">
-                                                                    <input type="text" name="edit_calificacion2[]" id="edit_calificacion2" class="text-center" style="background-color:#DF5C73" value="<?php echo $grad; ?>"></input>
+                                                                    <input type="text" name="edit_calificacion2[]" id="edit_calificacion2" class="text-center" style="background-color:#DF5C73" value="D"></input>
 
                                                                     <input type="hidden" name="curso_id[]" value="<?= $curso; ?>">
                                                                     <input type="hidden" name="user_id[]" value="<?= $user->id; ?>">

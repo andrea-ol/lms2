@@ -23,7 +23,6 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
             <p>Regresar</p>
             
             <script>function redirectToIndex() {window.location.href = `index.php`;}</script>
-
         </div>
         
     
@@ -117,6 +116,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
         </div>
     </div>
 </main>
+
 <script>function redirectToVistaap(idcurso) {window.location.href = `vistaap.php?id_curso=${idcurso}`;}</script>
 <script>function redirectToResultado(idcurso) {window.location.href = `resultadoap.php?id_curso=${idcurso}`;}</script>
 

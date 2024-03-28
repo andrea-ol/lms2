@@ -16,16 +16,31 @@ require_once 'db_config.php';
 ?>
 <main>
 <h1 class="mt-4">Centro de calificaciones Competencias</h1>
-    <div class="container-fluid px-4">
-        <!-- boton regresar  -->
-        <div class="container-fluid inline-flex">
-            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
-            <a href="competencias.php"></a>
-            <p>Regresar</p>
-        </div>
+    <!-- boton regresar  -->
+
+        <head>
+            <style>
+        .hidden-div {
+            display: none;
+        }
+            </style>
+        </head>
+        
+        <div class="container-fluid px-4">
+            <div class=" hidden-div container-fluid inline-flex">
+                <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
+                <a href="competencias.php"></a>
+            </div>
+
+            <div class="container-fluid inline-flex">
+                <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" onclick="redirectToCompetencias('<?= $curso; ?>')">
+                <a href="index.php"></a>
+                <p>Regresar</p>
+                <script>function redirectToCompetencias(curso) {window.location.href = `competencias.php?id_curso=${curso}`;}</script>
+            </div>
         
         <div class="container-icono-con-texto d-flex">
-            <button type="submit" class="icono-con-texto" name ="id_curso" onclick="redirectToActivity('<?= $curso; ?>')">
+                <button type="submit" class="icono-con-texto" name ="id_curso" onclick="redirectToActivity('<?= $curso; ?>')">
                     <img src="public/assets/img/evaluaciones.svg" alt="Ícono de evaluación" id="icono-evaluacion">
                     <p>Actividades</p>
                 </button>
@@ -33,19 +48,16 @@ require_once 'db_config.php';
                 <script>function redirectToActivity(curso) {window.location.href = `actividades.php?id_curso=${curso}`;}</script>
         
                 <?php 
-           $rol_user = $user->shortname;
-           if ($rol_user == 'editingteacher') {?>
+                $rol_user = $user->shortname;
+                if ($rol_user == 'editingteacher') {?>
 
-
-        <button class="icono-con-texto" id="resultadosbutton" onclick="showAlert()">
-            <img src="public/assets/img/resultados.svg" alt="Ícono de resultados" id="icono-resultados">
-            <p>Enviar a Sofia</p>
-        </button>
-        <?php }?>
-     
-    </div>
-        <div class="container-icono-con-texto d-flex">
+                    <button class="icono-con-texto" id="resultadosbutton" onclick="showAlert()">
+                        <img src="public/assets/img/resultados.svg" alt="Ícono de resultados" id="icono-resultados">
+                        <p>Enviar a Sofia</p>
+                    </button>
+                <?php }?>
         </div>
+
         <div class="card m-4">
             <div class="card-body" id="resultadoap-card">
                 <!-- METODO POST A TRAVES DE FORM PARA UPDATE DE LA DATA -->
