@@ -97,7 +97,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
                                             <br>
                                             <p class="card-text">
 
-                                                <?= 'ID CURSO: '.$idcurso.'</br>'.'COMPETENCIA: '.'</br>' . $nombre_competencia; ?>
+                                                <?= 'COMPETENCIA: '.'</br>' . $nombre_competencia; ?>
                                                 <input type="hidden" name="id_curso" value="<?php $idcurso; ?>">
                                             </p>
                                             <!-- <button type="submit" style="display:flexbox;" class="btn btn-success">CALIFICAR RESULTADO APRENDIZAJE</button> -->                                            

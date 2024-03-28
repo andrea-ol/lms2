@@ -88,6 +88,7 @@ require_once 'db_config.php';
                             
                             <tfoot>
                                 <tr>
+
                                     <th>Aprendiz</th>
                                     <th>Resultado aprendizaje</th>
                                     <th>Resultado aprendizaje</th>
@@ -107,6 +108,7 @@ require_once 'db_config.php';
                         <table id="example" class="display" style="width:100%">
                             <thead>
                                 <tr id="vistaap-thead">
+                                    <th>Codigo </th>
                                     <th>Aprendiz</th>
                                     <th>Resultado de Aprendizaje</th>
                                     <th>Calificación</th>
@@ -118,7 +120,7 @@ require_once 'db_config.php';
                                 <?php
 
                                 // Consulta para unificacion de tablas y muestra de usuarios
-                                $sentencia = $conn->query("SELECT distinct u.id, u.firstname, u.lastname, u.email,e.courseid, mc.fullname, r.shortname, bc.reaprendizaje, bc.descripcionra, bc.rea_nombre
+                                $sentencia = $conn->query("SELECT distinct u.id, u.firstname, u.lastname, u.email,e.courseid, mc.fullname, r.shortname, bc.reaprendizaje,bc.rea_id, bc.descripcionra, bc.rea_nombre
                                 FROM mdl_block_califica bc
                                 JOIN mdl_user u ON u.id = bc.userid
                                 JOIN mdl_user_enrolments ue ON ue.userid = u.id
@@ -137,12 +139,12 @@ require_once 'db_config.php';
                                     $reaprendizaje = $course->reaprendizaje;
                                     $observacion = $course->descripcionra;
                                     $rea_nombre = $course->rea_nombre;
-
+                                    $rea_a=$course->rea_id;
 
                                 ?>
                                     <!-- SEMAFORIZACION PARA VISTA RESULTADO APRENDIZAJE -->
                         <tr> <?php if ($reaprendizaje == 'A') { $colorStyle = 'background-color:#BCE2A8;'; } elseif ($reaprendizaje == 'D') { $colorStyle = 'background-color: #DF5C73;'; } else { $colorStyle = 'background-color:#FCE059;'; }
-                        echo "<td>" . $firstname . ' ' . $lastname . "</td>"; echo "<td>" . $rea_nombre . "</td>"; echo "<td style='" . $colorStyle . "'>" . $reaprendizaje . "</td>"; echo "<td>" . $observacion . "</td>"; ?>
+                        echo "<td>" . $rea_a . "</td>"."<td>" . $firstname . ' ' . $lastname . "</td>"; echo "<td>" . $rea_nombre . "</td>"; echo "<td style='" . $colorStyle . "'>" . $reaprendizaje . "</td>"; echo "<td>" . $observacion . "</td>"; ?>
 
                                 <?php } ?>
                             </tbody>
