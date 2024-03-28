@@ -33,7 +33,7 @@
     </nav> -->
 
 
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <nav class="sticky-top p-4 navbar navbar-expand navbar-dark bg-dark">
 
 
         <!-- Navbar Brand-->

@@ -65,7 +65,7 @@
     rgba(255, 255, 255, 0)
   );
   --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 1rem;
+  --bs-body-font-size: 1.4rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
@@ -186,7 +186,7 @@ h4,
 
 h5,
 .h5 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 h6,
@@ -2997,7 +2997,7 @@ textarea.is-invalid.datatable-input {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
   --bs-btn-font-family: ;
-  --bs-btn-font-size: 1rem;
+  --bs-btn-font-size: 1.50rem;
   --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.5;
   --bs-btn-color: #212529;
@@ -3382,7 +3382,7 @@ fieldset:disabled .btn {
 .btn-group-lg > .btn {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
-  --bs-btn-font-size: 1.25rem;
+  --bs-btn-font-size: 1.5rem;
   --bs-btn-border-radius: 0.5rem;
 }
 
@@ -3390,7 +3390,7 @@ fieldset:disabled .btn {
 .btn-group-sm > .btn {
   --bs-btn-padding-y: 0.25rem;
   --bs-btn-padding-x: 0.5rem;
-  --bs-btn-font-size: 0.875rem;
+  --bs-btn-font-size: 1.5rem;
   --bs-btn-border-radius: 0.25rem;
 }
 
@@ -3990,13 +3990,13 @@ fieldset:disabled .btn {
   --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
-  --bs-navbar-brand-font-size: 1.25rem;
+  --bs-navbar-brand-font-size: 1.5rem;
   --bs-navbar-brand-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
   --bs-navbar-toggler-padding-x: 0.75rem;
-  --bs-navbar-toggler-font-size: 1.25rem;
+  --bs-navbar-toggler-font-size: 1.50rem;
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.1);
   --bs-navbar-toggler-border-radius: 0.375rem;
@@ -11550,7 +11550,7 @@ body {
 
 /*logo del sena en el nav*/
 .logo-sena img {
-  width: 50px; /* Ajusta el valor según el tamaño deseado */
+  width: 75px; /* Ajusta el valor según el tamaño deseado */
   height: auto; /* Esto mantendrá la proporción original de la imagen */
   margin-right: 20px;
 }
