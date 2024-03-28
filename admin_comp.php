@@ -57,8 +57,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
                                              <?php echo $name_course; ?></p>
                                             <p class="card-text"> <?php echo $nombre_comp; ?></p>
                                     <br>
-                                    <button type="button" style="display:flexbox;" class="btn btn-success" onclick="redirectToResultados('<?= $idcurso; ?>')">VER RESULTADOS DE APRENDIZAJE</button>
-
+                                    <button type="button" style="display:flexbox;" class="btn btn-success" onclick="redirectToResultados('<?= $idcurso; ?>', '<?= $curso; ?>')">VER RESULTADOS DE APRENDIZAJE</button>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +66,13 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
         </div>
     </div>
 </main>
-<script>function redirectToResultados(idcurso) {window.location.href = `resultados.php?id_comp=${idcurso}`;}</script>
+
+<script>
+function redirectToResultados(idcurso, curso) {
+  const urlParams = `id_comp=${idcurso}&curso=${curso}`;
+  window.location.href = `resultados.php?${urlParams}`;
+}
+</script>
 
 <!-- llamada Footer -->
 <?php include 'footer.php';

@@ -8,14 +8,14 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
     $id_user = $user->id;
     $username = $user->username;
     $competencia = $_GET['id_comp'];
-
+    $curso = $_GET['curso'];
+    
+    
 // llamada header
     include 'header.php';
 // llamar conexion a bases de datos
     require_once 'db_config.php';
 // Obtener el id del curso para traer las competencias.
-   
-
     ?>
 
 <main>
@@ -53,14 +53,10 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
                             <?php
 
                             // Consulta para unificacion de tablas y muestra de usuarios
-                            $sentencia = $conn->query("SELECT distinct u.id as id_user,u.firstname, u.lastname, mc.id, mbc.reaprendizaje, mbc.descripcionra, mbc.categoryid, e.courseid
+                            $sentencia = $conn->query("SELECT distinct u.id as id_user,u.firstname, u.lastname, mbc.*
                             FROM mdl_block_califica mbc
                             JOIN mdl_user u on u.id = mbc.userid
-                            JOIN mdl_user_enrolments ue ON ue.userid = u.id
-                            JOIN mdl_enrol e ON e.id = ue.enrolid
-                            JOIN mdl_course mc ON mc.id = e.courseid
-                            WHERE mbc.enrolid = 1 AND mbc.categoryid =  $competencia
-                            ORDER BY id ASC");
+                            WHERE  mbc.categoryid =  $competencia and  mbc.courseid = $curso ORDER BY id ASC");
                             $courses = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
                             // Recorrido de los datos obtenidos
