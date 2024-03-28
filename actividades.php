@@ -17,12 +17,14 @@ require_once 'db_config.php'; // llamar conexion base de datos
 <main>
     <h1 class="mt-4">Centro de calificaciones Competencias</h1>
     <div class="container-fluid px-4">
-
+        <!-- boton regresar  -->
         <div class="container-fluid inline-flex">
-            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" onclick="redirectToResultadoAp('<?= $id_curso; ?>')" >
+            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
+            <a href="resultadosap.php" onclick="redirectToResultadosAp('<?= $id_curso; ?>')"></a>
             <p>Regresar</p>
-            <script>function redirectToResultadoAp(id_curso) {window.location.href = `resultadoap.php?id_curso=${id_curso}`;}</script>
+            <script>function redirectToResultadosAp(id_curso) {window.location.href = `resultadosap.php?id_curso=${id_curso}`;}</script>
         </div>
+
 
         <div class="container-icono-con-texto d-flex">
         <button class="icono-con-texto" onclick="miFuncion()">
