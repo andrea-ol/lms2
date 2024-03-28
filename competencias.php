@@ -18,13 +18,15 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
     <div class="container-fluid px-4">
 
         <div class="container-fluid inline-flex">
-            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
+            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" onclick="redirectToIndex('')">
             <a href="index.php"></a>
             <p>Regresar</p>
+            
+            <script>function redirectToIndex() {window.location.href = `index.php`;}</script>
+
         </div>
         
-   
-       
+    
         <div class="card m-4"> 
             <h1 class="m-4">Competencias SofiaQA</h1>
             <ol class="breadcrumb mb-4">

@@ -23,7 +23,6 @@ require_once 'db_config.php'; // llamar conexion base de datos
             <a href="index.php"></a>
             <p>Regresar</p>
         </div>
-        
         <div class="container-icono-con-texto d-flex">
                 <button type="submit" class="icono-con-texto" name ="id_curso" onclick="redirectToActivity('<?= $id_curso; ?>')">
                     <img src="public/assets/img/evaluaciones.svg" alt="Ícono de evaluación" id="icono-evaluacion">
@@ -48,7 +47,7 @@ require_once 'db_config.php'; // llamar conexion base de datos
         <div class="card m-4">
 
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">FOROS</li>
+                <li class="breadcrumb-item active">Evidencias</li>
             </ol>
 
             <div class="card-body" id="actividades-card">
