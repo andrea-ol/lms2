@@ -55,7 +55,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
                                             <p class="card-text"><?php echo $name_course; ?></p>
                                             <br>
                                     
-                                    <button type="button" style="display:flexbox;" class="btn btn-success" onclick="redirectToAdmincomp('<?= $idcurso; ?>')">Ver más TEST</button>
+                                    <button type="button" style="display:flexbox;" class="btn btn-success" onclick="redirectToAdmincomp('<?= $idcurso; ?>')">Ver más sobre el curso</button>
 
                                     </div>
                                 

@@ -11684,7 +11684,7 @@ body {
 }
 
 .datatable-wrapper .datatable-container {
-  font-size: 0.875rem;
+  font-size: auto;
 }
 
 .datatable-wrapper.no-header .datatable-container {
