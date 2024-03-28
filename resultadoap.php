@@ -28,8 +28,7 @@ require_once 'db_config.php';
         
         <div class="container-fluid px-4">
             <div class=" hidden-div container-fluid inline-flex">
-                <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
-                <a href="competencias.php"></a>
+            <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
             </div>
 
             <div class="container-fluid inline-flex">
