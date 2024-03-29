@@ -19,16 +19,13 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
     ?>
 
 <main>
-   
         <h1 class="mt-4">Centro de calificaciones</h1>
-  
   <div class="container-fluid px-4">
 
   <div class="container-fluid inline-flex">
       <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
       <p>Regresar</p>
   </div>
-    
 
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">RESULTADOS DE APRENDIZAJE</li>
@@ -39,57 +36,68 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
             
             <div class="card-body">
                 <!-- METODO POST A TRAVES DE FORM PARA UPDATE DE LA DATA -->
-                    <table id="datatablesSimple">
-                        <thead>
-                            <tr>
-                              
-                                <th>USUARIO</th>
-                                <th>RESULTADO APRENDIZAJE</th>
-                                <th>DESCRIPCIÓN</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <?php
-
-                            // Consulta para unificacion de tablas y muestra de usuarios
-                            $sentencia = $conn->query("SELECT distinct u.id as id_user,u.firstname, u.lastname, mbc.*
-                            FROM mdl_block_califica mbc
-                            JOIN mdl_user u on u.id = mbc.userid
-                            WHERE  mbc.categoryid =  $competencia and  mbc.courseid = $curso ORDER BY id ASC");
-                            $courses = $sentencia->fetchAll(PDO::FETCH_OBJ);
-
-                            // Recorrido de los datos obtenidos
-                            foreach ($courses as $course) {
-                   
-                                $id_user = $course->id_user;
-                                $firstname = $course->firstname;
-                                $lastname = $course->lastname;
-                                $reaprendizaje = $course->reaprendizaje;
-                                $observacion = $course->descripcionra;
-                            ?>
-
-                                <tr>
-                                    <td><?= $firstname . ' ' . $lastname; ?></td>
-                                    <td> <!-- HABILITAR CAMPO RESULTADO DE APRENDIZAJE -->
-                                        <input type="text" name="edit_calificacion[]" id="edit_calificacion" value="<?= $reaprendizaje; ?>">
-                                        <input type="hidden" name="user_id[]" value="<?= $id_user; ?>">
-                                    </td>
-                                    <td>
-                                        <!-- HABILITAR CAMPO OBSERVACIÓN -->
-                                        <input type="text" name="edit_observacion[]" id="edit_observacion" value="<?= $observacion; ?>">
-
-                                    </td>
+                <table id="example" class="display nowrap" style="width:100%">
+                            <thead>
+                                <tr id="vistaap-thead">
+                                    <th>Codigo </th>
+                                    <th>Aprendiz</th>
+                                    <th>Resultado de Aprendizaje</th>
+                                    <th>Calificación</th>
+                                    <th>Observación</th>
                                 </tr>
-                            <?php }  ?>
+                            </thead>
+                            <tbody>
+                                <?php
+                                // Consulta para unificacion de tablas y muestra de usuarios
+                                $sentencia = $conn->query("SELECT distinct u.id, u.firstname, u.lastname, u.email,e.courseid, mc.fullname, r.shortname, bc.reaprendizaje, bc.descripcionra, bc.rea_nombre, bc.rea_id
+                                FROM mdl_block_califica bc
+                                JOIN mdl_user u ON u.id = bc.userid
+                                JOIN mdl_user_enrolments ue ON ue.userid = u.id
+                                JOIN mdl_enrol e ON e.id = ue.enrolid
+                                JOIN mdl_role_assignments ra ON ra.userid = u.id 
+                                JOIN mdl_course mc ON mc.id = e.courseid
+                                JOIN mdl_role r ON r.id = ra.roleid
+                                WHERE mc.id = ".$curso." AND r.shortname = 'student'");
+                                $courses = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
-                        </tbody>
-                    </table>
+                                // Recorrido de los datos obtenidos
+                                foreach ($courses as $course) {
+                                    $firstname = $course->firstname;
+                                    $lastname = $course->lastname;
+                                    $reaprendizaje = $course->reaprendizaje;
+                                    $observacion = $course->descripcionra;
+                                    $rea_nombre = $course->rea_nombre;
+                                    $rea_a=$course->rea_id;
+
+                                ?>
+                                    <!-- SEMAFORIZACION PARA VISTA RESULTADO APRENDIZAJE -->
+                         <tr> <?php if ($reaprendizaje == 'A') { $colorStyle = 'background-color:#BCE2A8;'; } 
+                         elseif ($reaprendizaje == 'D') { $colorStyle = 'background-color: #DF5C73;'; } 
+                         else { $colorStyle = 'background-color:#FCE059;'; }
+                          echo"</td>
+                          <td>" . $rea_a . "</td>". "<td>" . $firstname . ' ' . $lastname . "</td> 
+                          <td>" . $rea_nombre . "</td> 
+                          <td style='" . $colorStyle . "'>" . $reaprendizaje . "
+                         </td><td>" . $observacion . "</td>"; ?>
+                                <?php } ?>
+                            </tbody>
+                            
+                            <tfoot>
+                                <tr>
+
+                                    <th>Aprendiz</th>
+                                    <th>Resultado aprendizaje</th>
+                                    <th>Resultado aprendizaje</th>
+                                    <th>Resultado aprendizaje</th>
+                                </tr>
+                            </tfoot>
+                        </table>
                     
             </div>
         </div>
     </div>
 </main>
+
 <!-- llamada Footer -->
 <?php include 'footer.php';
 } else {

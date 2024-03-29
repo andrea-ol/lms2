@@ -12,8 +12,9 @@
     <link href="public/css/style.min.css" rel="stylesheet" />
     <link href="public/css/styles.css" rel="stylesheet" />
 
-
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.1/css/responsive.dataTables.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/colreorder/2.0.0/css/colReorder.dataTables.css">
     <script src="public/js/all.js" crossorigin="anonymous"></script>
 
 

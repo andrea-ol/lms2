@@ -29,6 +29,9 @@ window.addEventListener('DOMContentLoaded', event => {
     });
     // Datatable vista resultadoap
     new DataTable('#example', {
+       
+            colReorder: true,
+            responsive: true,
         initComplete: function () {
             this.api()
                 .columns()
