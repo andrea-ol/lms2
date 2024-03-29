@@ -42,7 +42,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
                         <?php if ($rol_user == 'editingteacher') { ?> 
                             <form method="POST" action="resultadoap.php"> 
                                 <input type="hidden" name="id_curso" value="<?= $id_curso ?>"> 
-                                <button type="submit" class="btn btn-success">CALIFICAR RESULTADO APRENDIZAJE</button> 
+                                <button type="submit" class="btn btn-success">EVALUAR RESULTADO APRENDIZAJE</button> 
                                 <button type="button" class="btn btn-success" onclick="redirectToVistaap('<?= $id_curso; ?>')">VER RESULTADO APRENDIZAJE</button> 
                             </form> 
 
@@ -69,7 +69,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
             </div> 
 
             <div class="card m-4"> 
-                <h1 class="m-4">Competencias SofiaQA</h1> 
+                <h1 class="m-4">Competencias SOFIA</h1> 
                 <ol class="breadcrumb mb-4"> 
                     <li class="breadcrumb-item active">Bienvenido <?= $user->firstname . ' ' . $user->lastname; ?></li> 
                 </ol> 

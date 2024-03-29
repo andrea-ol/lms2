@@ -7,33 +7,26 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
     $id_user = $user->id;
     $username = $user->username;
-
 // llamada header
     include 'header.php';
 // llamar conexion a bases de datos
     require_once 'db_config.php';
-    
     ?>
-
 <main>
 <h1 class="mt-4">Centro de calificaciones</h1>
-
     <div class="container-fluid px-4">
-
         <div class="container-fluid inline-flex" onclick="miFuncion()">
             <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
             <p>Regresar</p>
         </div>
-      
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">Bienvenido <?php echo $user->firstname . ' ' . $user->lastname; // Se accede al arreglo y se imprime el dato requerido, en este caso hacemos el llamado del campo apellido  ?></li>
         </ol>
-
         <div class="card mb-4">
             <div class="card-body">
             <?php
                 if ($username == 'admin') {?>
-                <form class="col" method="POST" name="edit_id" id="edit_id" action="admin_comp.php">
+
                     <?php
                     // Consulta para unificacion de tablas y muestra de usuarios
                         $sentencia = $conn->query("SELECT * FROM mdl_course ORDER BY id ASC");
@@ -51,20 +44,14 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
                                         <div class="card-body">
                                             <br>
                                             <input type="hidden" name="course_id" id="course_id" value="<?= $idcurso; ?>">
-                                            
                                             <p class="card-text"><?php echo $name_course; ?></p>
                                             <br>
-                                    
                                     <button type="button" style="display:flexbox;" class="btn btn-success" onclick="redirectToAdmincomp('<?= $idcurso; ?>')">Ver más sobre el curso</button>
-
                                     </div>
-                                
                             </div>
                         </div>
-                    <?php }?>
-                </form>
-                <?php }?>
-                            
+                    <?php }?>paa
+                <?php }?>       
             </div>
         </div>
     </div>

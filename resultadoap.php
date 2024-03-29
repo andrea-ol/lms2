@@ -52,7 +52,7 @@ require_once 'db_config.php';
 
                     <button class="icono-con-texto" id="resultadosbutton" onclick="showAlert()">
                         <img src="public/assets/img/resultados.svg" alt="Ícono de resultados" id="icono-resultados">
-                        <p>Enviar a Sofia</p>
+                        <p>Enviar a SOFIA</p>
                     </button>
                 <?php }?>
         </div>
@@ -195,7 +195,7 @@ require_once 'db_config.php';
 <script>
 function showAlert() {
     Swal.fire({
-    title: "Esta seguro de querer enviar los datos a Sofia?",
+    title: "Esta seguro de querer enviar los datos a SOFIA?",
     footer: 'Nota: Una vez enviada la información, usted NO podra realizar ningun cambio, si desea relizar cambios posterior al envio, favor comunicarse al Soporte para ser atendido',
     showDenyButton: true,
     showCancelButton: false,

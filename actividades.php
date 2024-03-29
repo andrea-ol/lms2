@@ -68,7 +68,7 @@ require_once 'db_config.php'; // llamar conexion base de datos
                             $titulos = $conn->query("SELECT name, id FROM mdl_quiz WHERE course= " . $curso);
                             $actividades = $titulos->fetchAll(PDO::FETCH_OBJ);
                         ?>
-                            <table class="table table-striped">
+                            <table id="example2"class="table table-striped" >
                                 <thead>
                                     <tr id="actividades-thead">
                                         <th>APRENDIZ</th>
@@ -122,7 +122,7 @@ require_once 'db_config.php'; // llamar conexion base de datos
                                                             } else {
                                                             ?>
                                                                 <div class="d-gitd gap-2 col-8 mx-auto">
-                                                                    <input type="text" name="edit_calificacion2[]" id="edit_calificacion2" class="text-center" style="background-color:#DF5C73" value="D"></input>
+                                                                    <input type="text" name="edit_calificacion2[]" id="edit_calificacion2" class="text-center" style="background-color:#DF5C73" value="<?= $grad; ?>"></input>
 
                                                                     <input type="hidden" name="curso_id[]" value="<?= $curso; ?>">
                                                                     <input type="hidden" name="user_id[]" value="<?= $user->id; ?>">
@@ -136,10 +136,6 @@ require_once 'db_config.php'; // llamar conexion base de datos
                                                         ?>
                                                         <div class="d-gitd gap-2 col-8 mx-auto">
                                                             <input type="text" name="edit_calificacion3[]" id="edit_calificacion3" class="text-center" style="background-color:#FCE059" value="-"></input>
-
-
-
-
                                                         </div>
                                                     <?php
                                                     }
@@ -244,6 +240,13 @@ require_once 'db_config.php'; // llamar conexion base de datos
     </div>
     </div>
 </main>
+<script>
+
+    new DataTable('#example2', {
+        colReorder: true,
+        responsive: true
+    });
+</script>
 <!-- llamada Footer -->
 <?php include 'footer.php'; ?>
 <!-- un espacio -->

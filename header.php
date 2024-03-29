@@ -42,7 +42,7 @@
         <div class="navbar-brand d-inline-flex">
             <a class="navbar-brand ps-4" href="http://localhost/zajuna/my/">Área personal</a>
             <a class="navbar-brand ps-4" href="http://localhost/zajuna/my/courses.php">Mis cursos</a>
-            <a class="navbar-brand ps-4" href="https://oferta.senasofiaplus.edu.co/sofia-oferta/">Accede a Sofia</a>
+            <a class="navbar-brand ps-4" href="https://oferta.senasofiaplus.edu.co/sofia-oferta/">Accede a SOFIA</a>
         </div>
         <!-- Sidebar Toggle-->
         <!-- Navbar Search-->

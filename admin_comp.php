@@ -7,6 +7,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
     $id_user = $user->id;
     $username = $user->username;
+    
     $curso = $_GET['id_curso'];
 
 // llamada header
@@ -19,9 +20,8 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
     ?>
 
 <main>
- 
-        <h1 class="mt-4">Centro Calificaciones Zajuna V.1</h1>
-        <div class="container-fluid px-4">
+    <h1 class="mt-4">Centro Calificaciones Zajuna V.1</h1>
+    <div class="container-fluid px-4">
 
         <div class="container-fluid inline-flex" onclick="miFuncion()">
             <img src="public/assets/img/icno-de-regresar.svg" alt="Ícono de regresar" id="back-button">
@@ -38,7 +38,7 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
             <?php
                 if ($username == 'admin') {?>
                     <?php
-                    // Consulta para unificacion de tablas y muestra de usuarios
+                    // Consulta para unificacion de tablas 
                         $sentencia = $conn->query("SELECT * FROM mdl_block_califica where courseid = $curso ORDER BY categoryid ASC");
                         $courses = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
@@ -61,13 +61,15 @@ if (isset($_SESSION['username']) && isset($_SESSION['user'])) {
                                 </div>
                             </div>
                         </div>
-                        <?php }}?>
+                    <?php }}?>
             </div>
         </div>
     </div>
 </main>
 
 <script>
+
+
 function redirectToResultados(idcurso, curso) {
   const urlParams = `id_comp=${idcurso}&curso=${curso}`;
   window.location.href = `resultados.php?${urlParams}`;

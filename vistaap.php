@@ -144,7 +144,7 @@ require_once 'db_config.php';
                                 ?>
                                     <!-- SEMAFORIZACION PARA VISTA RESULTADO APRENDIZAJE -->
                         <tr> <?php if ($reaprendizaje == 'A') { $colorStyle = 'background-color:#BCE2A8;'; } elseif ($reaprendizaje == 'D') { $colorStyle = 'background-color: #DF5C73;'; } else { $colorStyle = 'background-color:#FCE059;'; }
-                        echo "<td>" . $rea_a . "</td>"."<td>" . $firstname . ' ' . $lastname . "</td>"; echo "<td>" . $rea_nombre . "</td>"; echo "<td style='" . $colorStyle . "'>" . $reaprendizaje . "</td>"; echo "<td>" . $observacion . "</td>"; ?>
+                        echo "<td class='text-center'>" . $rea_a . "</td>"."<td>" . $firstname . ' ' . $lastname . "</td>"; echo "<td>" . $rea_nombre . "</td>"; echo "<td style='" . $colorStyle . "'>" . $reaprendizaje . "</td>"; echo "<td>" . $observacion . "</td>"; ?>
 
                                 <?php } ?>
                             </tbody>
